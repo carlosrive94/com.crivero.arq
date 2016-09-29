@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.crivero.arq</groupId>
+	<artifactId>com.crivero.arq.parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>com.crivero.arq.parent</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<log4j2.version>2.6.2</log4j2.version>
+		<spring.version>4.3.2.RELEASE</spring.version>
+		<junit.version>4.12</junit.version>
+		<jboss-servlet.version>1.0.2.Final</jboss-servlet.version>
+		<javax-annotation.version>1.2</javax-annotation.version>
+		<com.crivero.arq.module.root.version>0.0.1-SNAPSHOT</com.crivero.arq.module.root.version>
+		<com.crivero.arq.module.configuration.version>0.0.1-SNAPSHOT</com.crivero.arq.module.configuration.version>
+		<com.crivero.arq.module.literals.version>0.0.1-SNAPSHOT</com.crivero.arq.module.literals.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>com.crivero.arq</groupId>
+				<artifactId>com.crivero.arq.module.root</artifactId>
+				<version>${com.crivero.arq.module.root.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.crivero.arq</groupId>
+				<artifactId>com.crivero.arq.module.configuration</artifactId>
+				<version>${com.crivero.arq.module.configuration.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.crivero.arq</groupId>
+				<artifactId>com.crivero.arq.module.literals</artifactId>
+				<version>${com.crivero.arq.module.literals.version}</version>
+			</dependency>
+
+			<!-- Log4j2 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-web</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+
+			<!-- Spring Core -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- javax.servlet -->
+			<dependency>
+				<groupId>org.jboss.spec.javax.servlet</groupId>
+				<artifactId>jboss-servlet-api_3.0_spec</artifactId>
+				<version>${jboss-servlet.version}</version>
+			</dependency>
+
+			<!-- junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+</project>
