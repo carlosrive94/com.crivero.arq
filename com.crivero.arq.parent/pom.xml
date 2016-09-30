@@ -11,16 +11,17 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<com.crivero.arq.module.root.version>0.0.1-SNAPSHOT</com.crivero.arq.module.root.version>
+		<com.crivero.arq.module.configuration.version>0.0.1-SNAPSHOT</com.crivero.arq.module.configuration.version>
+		<com.crivero.arq.module.literals.version>0.0.1-SNAPSHOT</com.crivero.arq.module.literals.version>
 		<log4j2.version>2.6.2</log4j2.version>
 		<spring.version>4.3.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<jboss-servlet.version>1.0.2.Final</jboss-servlet.version>
-		<javax-annotation.version>1.2</javax-annotation.version>
-		<com.crivero.arq.module.root.version>0.0.1-SNAPSHOT</com.crivero.arq.module.root.version>
-		<com.crivero.arq.module.configuration.version>0.0.1-SNAPSHOT</com.crivero.arq.module.configuration.version>
-		<com.crivero.arq.module.literals.version>0.0.1-SNAPSHOT</com.crivero.arq.module.literals.version>
+		<primefaces.version>6.0</primefaces.version>
+		<jsf.version>2.2.13</jsf.version>
 	</properties>
-	
+
 	<dependencyManagement>
 		<dependencies>
 
@@ -29,13 +30,13 @@
 				<artifactId>com.crivero.arq.module.root</artifactId>
 				<version>${com.crivero.arq.module.root.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.crivero.arq</groupId>
 				<artifactId>com.crivero.arq.module.configuration</artifactId>
 				<version>${com.crivero.arq.module.configuration.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.crivero.arq</groupId>
 				<artifactId>com.crivero.arq.module.literals</artifactId>
@@ -89,6 +90,26 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 			</dependency>
+
+			<!-- primefaces -->
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>${primefaces.version}</version>
+			</dependency>
+
+			<!-- jsf -->
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-impl</artifactId>
+				<version>${jsf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>${jsf.version}</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>
