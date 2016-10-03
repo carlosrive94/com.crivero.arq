@@ -6,9 +6,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource({
-		// "file:${app.home}/app.properties", //to get JBoss properties
-		"classpath:default.properties" // if same key, this will 'win'
+@PropertySource({ "classpath:default.properties", // default
+		"file:C:/Users/criverom/Desktop/hello.properties" // if same key, this will 'win'
 })
 public class AppProperties {
 
