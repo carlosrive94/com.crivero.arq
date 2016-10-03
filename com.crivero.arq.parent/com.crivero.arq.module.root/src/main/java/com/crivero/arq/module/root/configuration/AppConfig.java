@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan({ "com.crivero.arq.module", "com.carlos" })
+@ComponentScan({ "com.crivero" })
 @EnableWebMvc
 public class AppConfig extends WebMvcConfigurerAdapter {
 
