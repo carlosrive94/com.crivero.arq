@@ -1,4 +1,4 @@
-package com.crivero.arq.module.configuration.domain;
+package com.crivero.arq.module.root.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,4 +1,4 @@
-package com.crivero.arq.module.configuration.domain;
+package com.crivero.arq.module.root.domain;
 
 import org.springframework.stereotype.Component;
 

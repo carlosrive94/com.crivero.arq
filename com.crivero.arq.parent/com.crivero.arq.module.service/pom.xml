@@ -2,27 +2,25 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.crivero</groupId>
-	<artifactId>com.crivero.web.service.employee</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.crivero.arq</groupId>
+	<artifactId>com.crivero.arq.module.web.service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>com.crivero.web.service</name>
-
-	<properties>
-		<spring.version>4.3.3.RELEASE</spring.version>
-	</properties>
+	<name>com.crivero.arq.module.service</name>
+	<parent>
+		<groupId>com.crivero.arq</groupId>
+		<artifactId>com.crivero.arq.parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
+			<groupId>com.crivero.arq</groupId>
+			<artifactId>com.crivero.arq.module.root</artifactId>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>web-service</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

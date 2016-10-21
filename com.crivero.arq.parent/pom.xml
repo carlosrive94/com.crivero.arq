@@ -14,6 +14,7 @@
 		<com.crivero.arq.module.root.version>0.0.1-SNAPSHOT</com.crivero.arq.module.root.version>
 		<com.crivero.arq.module.configuration.version>0.0.1-SNAPSHOT</com.crivero.arq.module.configuration.version>
 		<com.crivero.arq.module.literals.version>0.0.1-SNAPSHOT</com.crivero.arq.module.literals.version>
+		<com.crivero.arq.module.web.service.version>0.0.1-SNAPSHOT</com.crivero.arq.module.web.service.version>
 		<log4j2.version>2.6.2</log4j2.version>
 		<spring.version>4.3.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
@@ -41,6 +42,12 @@
 				<groupId>com.crivero.arq</groupId>
 				<artifactId>com.crivero.arq.module.literals</artifactId>
 				<version>${com.crivero.arq.module.literals.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.crivero.arq</groupId>
+				<artifactId>com.crivero.arq.module.web.service</artifactId>
+				<version>${com.crivero.arq.module.web.service.version}</version>
 			</dependency>
 
 			<!-- Log4j2 -->

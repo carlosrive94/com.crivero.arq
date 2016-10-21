@@ -1,12 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com</groupId>
+	<groupId>com.crivero</groupId>
 	<artifactId>com.crivero.app</artifactId>
 	<packaging>war</packaging>
-	<name>App</name>
-	<url>http://maven.apache.org</url>
-
+	<properties>
+		<com.crivero.web.service.employee.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.employee.wsdl.version>
+	</properties>
+	
 	<parent>
 		<groupId>com.crivero.arq</groupId>
 		<artifactId>com.crivero.arq.parent</artifactId>
@@ -25,6 +26,15 @@
 		<dependency>
 			<groupId>com.crivero.arq</groupId>
 			<artifactId>com.crivero.arq.module.root</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.crivero.arq</groupId>
+			<artifactId>com.crivero.arq.module.web.service</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.crivero</groupId>
+			<artifactId>com.crivero.web.service.employee.wsdl</artifactId>
+			<version>${com.crivero.web.service.employee.wsdl.version}</version>
 		</dependency>
 	</dependencies>
 

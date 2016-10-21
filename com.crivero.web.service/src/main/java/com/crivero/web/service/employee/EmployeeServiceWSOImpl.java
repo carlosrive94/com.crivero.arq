@@ -1,4 +1,4 @@
-package com.crivero.web.service.beans;
+package com.crivero.web.service.employee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,9 @@ import java.util.List;
 import org.wso2.ws.dataservice.ComCriveroDataService;
 import org.wso2.ws.dataservice.DataServiceFault_Exception;
 
-public class EmployeeBean {
+import com.crivero.web.service.employee.dto.Employee;
+
+public class EmployeeServiceWSOImpl implements EmployeeServiceWSO {
 
 	public List<Employee> getEmployees() {
 		ComCriveroDataService c = new ComCriveroDataService();
@@ -21,13 +23,23 @@ public class EmployeeBean {
 		return employees;
 	}
 
-	public void insertEmployee(String id, String name, String address) {
+	public String insertEmployee(String id, String name, String address) {
 		ComCriveroDataService c = new ComCriveroDataService();
-		c.getSOAP11Endpoint().insertEmployee(id, name, address);
+		try {
+			c.getSOAP11Endpoint().insertEmployee(id, name, address);
+		} catch (Exception e) {
+			return "Error inserting employee";
+		}
+		return "Employee inserted successfully";
 	}
 
-	public void removeEmployee(String id) {
+	public String removeEmployee(String id) {
 		ComCriveroDataService c = new ComCriveroDataService();
-		c.getSOAP11Endpoint().deleteEmployeeById(id);
+		try {
+			c.getSOAP11Endpoint().deleteEmployeeById(id);
+		} catch (Exception e) {
+			return "Error removing employee";
+		}
+		return "Employee removed successfully";
 	}
 }

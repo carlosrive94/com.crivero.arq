@@ -1,10 +1,9 @@
-package com.crivero.web.service.beans;
+package com.crivero.web.service.employee.dto;
 
 public class Employee {
-
-	String id;
-	String name;
-	String address;
+	private String id;
+	private String name;
+	private String address;
 
 	public Employee() {
 	}

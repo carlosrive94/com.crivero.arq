@@ -10,9 +10,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.crivero.app.clients.EmployeeServiceClient;
 import com.crivero.arq.module.configuration.AppProperties;
-import com.crivero.arq.module.configuration.domain.Application;
 import com.crivero.arq.module.literals.LiteralsProvider;
+import com.crivero.arq.module.root.domain.Application;
 
 @Controller
 public class BaseController {
@@ -25,33 +26,41 @@ public class BaseController {
 
 	@Autowired
 	private AppProperties appProperties;
-	
+
 	@Autowired
 	private LiteralsProvider literalsProvider;
+
+	@Autowired
+	private EmployeeServiceClient employeeServiceClient;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
 
 		String msg = "";
-		
-		String literal1 = literalsProvider.getLiteral("customer.name", new Object[] { 28, "google.com" }, Locale.US);		
-		String literal2 = literalsProvider.getLiteral("customer.namer", new Object[] { 28, "google.com" }, new Locale("ES"));
+
+		String employees = employeeServiceClient.getService().getEmployees().toString();
+
+		String literal1 = literalsProvider.getLiteral("customer.name", new Object[] { 28, "google.com" }, Locale.US);
+		String literal2 = literalsProvider.getLiteral("customer.namer", new Object[] { 28, "google.com" },
+				new Locale("ES"));
 		String property1 = appProperties.getProperty("hello.url");
 		String property2 = appProperties.getProperty("hello.db");
 		String property3 = appProperties.getProperty("error.lalala");
 
 		msg = "Simple bean: " + application + "\n";
 		model.addAttribute("message1", msg);
-		msg = "Property from a file: " +  property1+ "\n";
+		msg = "Property from a file: " + property1 + "\n";
 		model.addAttribute("message2", msg);
 		msg = "Propery from default: " + property2 + "\n";
 		model.addAttribute("message3", msg);
 		msg = "Propery not found: " + property3 + "\n";
 		model.addAttribute("message4", msg);
-		msg = "Literal: "+ literal1 + "\n";
+		msg = "Literal: " + literal1 + "\n";
 		model.addAttribute("message5", msg);
-		msg = "Literal not found: "+ literal2 + "\n";
+		msg = "Literal not found: " + literal2 + "\n";
 		model.addAttribute("message6", msg);
+		msg = "Employees: " + employees;
+		model.addAttribute("message7", msg);
 
 		logger.debug("debug");
 

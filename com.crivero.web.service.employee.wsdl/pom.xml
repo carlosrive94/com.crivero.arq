@@ -3,26 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.crivero</groupId>
-	<artifactId>com.crivero.web.service.employee</artifactId>
+	<artifactId>com.crivero.web.service.employee.wsdl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>com.crivero.web.service</name>
+	<name>com.crivero.web.service.employee.wsdl</name>
 
-	<properties>
-		<spring.version>4.3.3.RELEASE</spring.version>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-	</dependencies>
 
 	<build>
-		<finalName>web-service</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
