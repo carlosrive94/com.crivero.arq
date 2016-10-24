@@ -15,7 +15,7 @@ import javax.xml.ws.Service;
  * 
  */
 @WebServiceClient(name = "employeeServiceWSO", 
-                  wsdlLocation = "http://10.110.120.167:9764/services/employeeServiceWSO?wsdl",
+                  wsdlLocation = "http://10.110.120.182:9764/services/employeeServiceWSO?wsdl",
                   targetNamespace = "http://employee.service.web.crivero.com") 
 public class EmployeeServiceWSO extends Service {
 
@@ -31,11 +31,11 @@ public class EmployeeServiceWSO extends Service {
     static {
         URL url = null;
         try {
-            url = new URL("http://10.110.120.167:9764/services/employeeServiceWSO?wsdl");
+            url = new URL("http://10.110.120.182:9764/services/employeeServiceWSO?wsdl");
         } catch (MalformedURLException e) {
             java.util.logging.Logger.getLogger(EmployeeServiceWSO.class.getName())
                 .log(java.util.logging.Level.INFO, 
-                     "Can not initialize the default wsdl from {0}", "http://10.110.120.167:9764/services/employeeServiceWSO?wsdl");
+                     "Can not initialize the default wsdl from {0}", "http://10.110.120.182:9764/services/employeeServiceWSO?wsdl");
         }
         WSDL_LOCATION = url;
     }

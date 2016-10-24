@@ -15,7 +15,7 @@ import javax.xml.ws.Service;
  * 
  */
 @WebServiceClient(name = "com.crivero.data.service", 
-                  wsdlLocation = "http://10.110.120.167:9763/services/com.crivero.data.service?wsdl",
+                  wsdlLocation = "http://10.110.120.182:9763/services/com.crivero.data.service?wsdl",
                   targetNamespace = "http://ws.wso2.org/dataservice") 
 public class ComCriveroDataService extends Service {
 
@@ -31,11 +31,11 @@ public class ComCriveroDataService extends Service {
     static {
         URL url = null;
         try {
-            url = new URL("http://10.110.120.167:9763/services/com.crivero.data.service?wsdl");
+            url = new URL("http://10.110.120.182:9763/services/com.crivero.data.service?wsdl");
         } catch (MalformedURLException e) {
             java.util.logging.Logger.getLogger(ComCriveroDataService.class.getName())
                 .log(java.util.logging.Level.INFO, 
-                     "Can not initialize the default wsdl from {0}", "http://10.110.120.167:9763/services/com.crivero.data.service?wsdl");
+                     "Can not initialize the default wsdl from {0}", "http://10.110.120.182:9763/services/com.crivero.data.service?wsdl");
         }
         WSDL_LOCATION = url;
     }

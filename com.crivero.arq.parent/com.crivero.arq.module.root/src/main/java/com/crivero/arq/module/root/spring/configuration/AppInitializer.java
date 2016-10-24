@@ -1,4 +1,4 @@
-package com.crivero.arq.module.root.configuration;
+package com.crivero.arq.module.root.spring.configuration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration.Dynamic;

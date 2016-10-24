@@ -1,4 +1,4 @@
-package com.crivero.arq.module.root.configuration;
+package com.crivero.arq.module.root.spring.configuration;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
