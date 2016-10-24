@@ -7,17 +7,17 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class Employee {
 
-	String name;
 	String id;
+	String name;
 	String address;
 
 	public Employee() {
 
 	}
 
-	public Employee(String name, String id, String address) {
-		this.name = name;
+	public Employee(String id, String name, String address) {
 		this.id = id;
+		this.name = name;
 		this.address = address;
 	}
 
