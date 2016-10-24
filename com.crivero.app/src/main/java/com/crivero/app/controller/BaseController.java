@@ -62,7 +62,7 @@ public class BaseController {
 		msg = "Employees: " + employees;
 		model.addAttribute("message7", msg);
 
-		logger.debug("debug");
+		logger.info("app opened");
 
 		return VIEW_INDEX;
 

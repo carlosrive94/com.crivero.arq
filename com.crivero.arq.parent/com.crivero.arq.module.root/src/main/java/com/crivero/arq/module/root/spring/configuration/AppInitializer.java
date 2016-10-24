@@ -3,12 +3,16 @@ package com.crivero.arq.module.root.spring.configuration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration.Dynamic;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class AppInitializer implements WebApplicationInitializer {
+	
+	final static Logger logger = LogManager.getLogger(AppInitializer.class.getName());
 
 	@Override
 	public void onStartup(ServletContext servletContext) {
@@ -30,7 +34,7 @@ public class AppInitializer implements WebApplicationInitializer {
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
 		
-		System.out.println("INITIALIZED SUCCESSFULLY");
+		logger.info("INITIALIZED SUCCESSFULLY");
 	}
 
 }
