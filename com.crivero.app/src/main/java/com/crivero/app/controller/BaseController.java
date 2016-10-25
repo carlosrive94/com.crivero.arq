@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.crivero.app.clients.EmployeeServiceClient;
 import com.crivero.arq.module.configuration.AppProperties;
@@ -77,7 +78,7 @@ public class BaseController {
 		String literal1 = literalsProvider.getLiteral("customer.name", new Object[] { 28, "google.com" }, Locale.US);
 		msg = "Literal en: " + literal1;
 		model.addAttribute("literal1", msg);
-		
+
 		String literal2 = literalsProvider.getLiteral("customer.name", new Object[] { 28, "forocoches.com" },
 				new Locale("ES"));
 		msg = "Literal es: " + literal2;
@@ -94,11 +95,25 @@ public class BaseController {
 	public String employees(ModelMap model) {
 		String msg = "";
 		String employees = "";
-		for (Employee e : employeeServiceClient.getService().getEmployees())
-			employees += e.getName() + ", ";
+		for (Employee e : employeeServiceClient.getService().getEmployees()) {
+			employees += "{" + e.getId() + ": " + e.getName() + "}, ";
+		}
 		msg = "Employees: " + employees;
 		model.addAttribute("employees", msg);
 		return VIEW_EMPLOYEES;
+	}
+
+	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+	public String add(ModelMap model, @RequestParam(value = "id") String id, @RequestParam(value = "name") String name,
+			@RequestParam(value = "address") String address) {
+		employeeServiceClient.getService().insertEmployee(id, name, address);
+		return "redirect:employees";
+	}
+
+	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.POST)
+	public String add(ModelMap model, @RequestParam(value = "id") String id) {
+		employeeServiceClient.getService().removeEmployee(id);
+		return "redirect:employees";
 	}
 
 	@RequestMapping(value = "/primefaces", method = RequestMethod.GET)

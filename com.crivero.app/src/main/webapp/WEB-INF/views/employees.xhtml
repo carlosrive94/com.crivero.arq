@@ -10,5 +10,16 @@
 </h:head>
 <h:body>
 	<h4>${employees}</h4>
+	<form method="post" action="addEmployee">
+		Id: <input type="text" name="id" /> 
+		Name: <input type="text" name="name" /> 
+		Address: <input type="text" name="address" />
+		<input type="submit" value="Add" />
+	</form>
+	<p></p>
+	<form method="post" action="deleteEmployee">
+		Id: <input type="text" name="id" /> 
+		<input type="submit" value="Delete" />
+	</form>
 </h:body>
 </html>
