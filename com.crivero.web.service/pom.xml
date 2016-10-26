@@ -11,6 +11,8 @@
 
 	<properties>
 		<spring.version>4.3.3.RELEASE</spring.version>
+		<cxf.version>2.7.8</cxf.version>
+		<wsdl.location>http://7.116.104.141:9763/services/com.crivero.data.service?wsdl</wsdl.location>
 	</properties>
 
 	<dependencies>
@@ -31,6 +33,29 @@
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>src/main/java</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${wsdl.location}</wsdl>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

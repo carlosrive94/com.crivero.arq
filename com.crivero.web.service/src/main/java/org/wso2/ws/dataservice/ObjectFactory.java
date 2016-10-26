@@ -43,6 +43,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetEmployees }
+     * 
+     */
+    public GetEmployees createGetEmployees() {
+        return new GetEmployees();
+    }
+
+    /**
      * Create an instance of {@link DataServiceFault.SourceDataService }
      * 
      */
@@ -72,14 +80,6 @@ public class ObjectFactory {
      */
     public InsertEmployee createInsertEmployee() {
         return new InsertEmployee();
-    }
-
-    /**
-     * Create an instance of {@link GetEmployees }
-     * 
-     */
-    public GetEmployees createGetEmployees() {
-        return new GetEmployees();
     }
 
     /**

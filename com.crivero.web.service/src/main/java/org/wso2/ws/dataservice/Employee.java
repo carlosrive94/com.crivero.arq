@@ -8,22 +8,22 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para employee complex type.
+ * <p>Java class for employee complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="employee"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="NAME" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="ADDRESS" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType name="employee">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="NAME" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="ADDRESS" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 
@@ -44,7 +44,7 @@ public class Employee {
     protected String address;
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class Employee {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class Employee {
     }
 
     /**
-     * Obtiene el valor de la propiedad name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class Employee {
     }
 
     /**
-     * Define el valor de la propiedad name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class Employee {
     }
 
     /**
-     * Obtiene el valor de la propiedad address.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class Employee {
     }
 
     /**
-     * Define el valor de la propiedad address.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is

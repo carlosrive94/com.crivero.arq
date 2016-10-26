@@ -9,37 +9,37 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="current_params" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="current_request_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="nested_exception" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="source_data_service"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="ds_code" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="current_params" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="current_request_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="nested_exception" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="source_data_service">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
+ *         &lt;element name="ds_code" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 
@@ -67,7 +67,7 @@ public class DataServiceFault {
     protected String dsCode;
 
     /**
-     * Obtiene el valor de la propiedad currentParams.
+     * Gets the value of the currentParams property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Define el valor de la propiedad currentParams.
+     * Sets the value of the currentParams property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Obtiene el valor de la propiedad currentRequestName.
+     * Gets the value of the currentRequestName property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Define el valor de la propiedad currentRequestName.
+     * Sets the value of the currentRequestName property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Obtiene el valor de la propiedad nestedException.
+     * Gets the value of the nestedException property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Define el valor de la propiedad nestedException.
+     * Sets the value of the nestedException property.
      * 
      * @param value
      *     allowed object is
@@ -139,7 +139,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Obtiene el valor de la propiedad sourceDataService.
+     * Gets the value of the sourceDataService property.
      * 
      * @return
      *     possible object is
@@ -151,7 +151,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Define el valor de la propiedad sourceDataService.
+     * Sets the value of the sourceDataService property.
      * 
      * @param value
      *     allowed object is
@@ -163,7 +163,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Obtiene el valor de la propiedad dsCode.
+     * Gets the value of the dsCode property.
      * 
      * @return
      *     possible object is
@@ -175,7 +175,7 @@ public class DataServiceFault {
     }
 
     /**
-     * Define el valor de la propiedad dsCode.
+     * Sets the value of the dsCode property.
      * 
      * @param value
      *     allowed object is
@@ -188,23 +188,23 @@ public class DataServiceFault {
 
 
     /**
-     * <p>Clase Java para anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
      * </pre>
      * 
      * 
@@ -228,7 +228,7 @@ public class DataServiceFault {
         protected String dataServiceName;
 
         /**
-         * Obtiene el valor de la propiedad location.
+         * Gets the value of the location property.
          * 
          * @return
          *     possible object is
@@ -240,7 +240,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Define el valor de la propiedad location.
+         * Sets the value of the location property.
          * 
          * @param value
          *     allowed object is
@@ -252,7 +252,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Obtiene el valor de la propiedad defaultNamespace.
+         * Gets the value of the defaultNamespace property.
          * 
          * @return
          *     possible object is
@@ -264,7 +264,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Define el valor de la propiedad defaultNamespace.
+         * Sets the value of the defaultNamespace property.
          * 
          * @param value
          *     allowed object is
@@ -276,7 +276,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Obtiene el valor de la propiedad description.
+         * Gets the value of the description property.
          * 
          * @return
          *     possible object is
@@ -288,7 +288,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Define el valor de la propiedad description.
+         * Sets the value of the description property.
          * 
          * @param value
          *     allowed object is
@@ -300,7 +300,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Obtiene el valor de la propiedad dataServiceName.
+         * Gets the value of the dataServiceName property.
          * 
          * @return
          *     possible object is
@@ -312,7 +312,7 @@ public class DataServiceFault {
         }
 
         /**
-         * Define el valor de la propiedad dataServiceName.
+         * Sets the value of the dataServiceName property.
          * 
          * @param value
          *     allowed object is
