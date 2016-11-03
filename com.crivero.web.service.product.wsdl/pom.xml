@@ -3,16 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.crivero</groupId>
-	<artifactId>com.crivero.web.service.employee.wsdl</artifactId>
+	<artifactId>com.crivero.web.service.product.wsdl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>com.crivero.web.service.employee.wsdl</name>
+	<name>com.crivero.web.service.product.wsdl</name>
 
 	<properties>
 		<spring.version>4.3.3.RELEASE</spring.version>
 		<cxf.version>2.7.8</cxf.version>
-		<wsdl.location>http://localhost:9764/services/employeeServiceWSO?wsdl</wsdl.location>
+		<wsdl.location>http://localhost:9764/services/productServiceWSO?wsdl</wsdl.location>
 	</properties>
 
 	<build>

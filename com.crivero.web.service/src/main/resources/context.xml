@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="employeeServiceWSO" class="com.crivero.web.service.employees.service.EmployeeServiceWSOImpl" />
+	<bean id="productServiceWSO" class="com.crivero.web.service.products.service.ProductServiceWSOImpl" />
+</beans>

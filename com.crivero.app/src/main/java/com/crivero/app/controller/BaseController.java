@@ -12,16 +12,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.crivero.app.clients.EmployeeServiceClient;
+import com.crivero.app.clients.ProductServiceClient;
 import com.crivero.arq.module.configuration.AppProperties;
 import com.crivero.arq.module.literals.LiteralsProvider;
 import com.crivero.arq.module.root.domain.Application;
 import com.crivero.arq.module.root.domain.Employee;
+import com.crivero.arq.module.root.domain.Product;
 
 @Controller
 public class BaseController {
 
 	private static final String VIEW_INDEX = "index";
 	private static final String VIEW_EMPLOYEES = "employees";
+	private static final String VIEW_PRODUCTS = "products";
 	private static final String VIEW_PRIMEFACES = "primefaces";
 	private static final String VIEW_LITERALS = "literals";
 	private static final String VIEW_PROPERTIES = "properties";
@@ -39,6 +42,9 @@ public class BaseController {
 
 	@Autowired
 	private EmployeeServiceClient employeeServiceClient;
+	
+	@Autowired
+	private ProductServiceClient productServiceClient;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
@@ -104,16 +110,41 @@ public class BaseController {
 	}
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-	public String add(ModelMap model, @RequestParam(value = "id") String id, @RequestParam(value = "name") String name,
+	public String addEmployee(ModelMap model, @RequestParam(value = "id") String id, @RequestParam(value = "name") String name,
 			@RequestParam(value = "address") String address) {
 		employeeServiceClient.getService().insertEmployee(id, name, address);
 		return "redirect:employees";
 	}
 
 	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.POST)
-	public String add(ModelMap model, @RequestParam(value = "id") String id) {
+	public String deleteEmployee(ModelMap model, @RequestParam(value = "id") String id) {
 		employeeServiceClient.getService().removeEmployee(id);
 		return "redirect:employees";
+	}
+	
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
+	public String products(ModelMap model) {
+		String msg = "";
+		String products = "";
+		for (Product p : productServiceClient.getService().getProducts()) {
+			products += "{" + p.getId() + ": " + p.getName() + "}, ";
+		}
+		msg = "Products: " + products;
+		model.addAttribute("products", msg);
+		return VIEW_PRODUCTS;
+	}
+
+	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+	public String addProduct(ModelMap model, @RequestParam(value = "id") String id, @RequestParam(value = "name") String name,
+			@RequestParam(value = "company") String company) {
+		productServiceClient.getService().insertProduct(id, name, company);
+		return "redirect:products";
+	}
+
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
+	public String deleteProduct(ModelMap model, @RequestParam(value = "id") String id) {
+		productServiceClient.getService().removeProduct(id);
+		return "redirect:products";
 	}
 
 	@RequestMapping(value = "/primefaces", method = RequestMethod.GET)

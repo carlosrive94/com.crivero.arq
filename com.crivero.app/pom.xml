@@ -6,6 +6,7 @@
 	<packaging>war</packaging>
 	<properties>
 		<com.crivero.web.service.employee.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.employee.wsdl.version>
+		<com.crivero.web.service.product.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.product.wsdl.version>
 	</properties>
 	
 	<parent>
@@ -35,6 +36,11 @@
 			<groupId>com.crivero</groupId>
 			<artifactId>com.crivero.web.service.employee.wsdl</artifactId>
 			<version>${com.crivero.web.service.employee.wsdl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.crivero</groupId>
+			<artifactId>com.crivero.web.service.product.wsdl</artifactId>
+			<version>${com.crivero.web.service.product.wsdl.version}</version>
 		</dependency>
 	</dependencies>
 

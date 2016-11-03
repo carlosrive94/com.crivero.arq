@@ -19,6 +19,9 @@
         <dependent-module archiveName="com.crivero.web.service.employee.wsdl-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/com.crivero.web.service.employee.wsdl/com.crivero.web.service.employee.wsdl">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="com.crivero.web.service.product.wsdl-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/com.crivero.web.service.product.wsdl/com.crivero.web.service.product.wsdl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/com.crivero.app/target/classes"/>
         <property name="context-root" value="com.crivero.app"/>
     </wb-module>
