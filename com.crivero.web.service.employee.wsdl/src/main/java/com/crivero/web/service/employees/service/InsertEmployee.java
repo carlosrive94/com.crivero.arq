@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Clase Java para anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType>
@@ -39,15 +39,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "insertEmployee")
 public class InsertEmployee {
 
-    @XmlElementRef(name = "id", type = JAXBElement.class)
+    @XmlElementRef(name = "id", type = JAXBElement.class, required = false)
     protected JAXBElement<String> id;
-    @XmlElementRef(name = "name", type = JAXBElement.class)
+    @XmlElementRef(name = "name", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
-    @XmlElementRef(name = "address", type = JAXBElement.class)
+    @XmlElementRef(name = "address", type = JAXBElement.class, required = false)
     protected JAXBElement<String> address;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      * @return
      *     possible object is
@@ -59,7 +59,7 @@ public class InsertEmployee {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      * @param value
      *     allowed object is
@@ -67,11 +67,11 @@ public class InsertEmployee {
      *     
      */
     public void setId(JAXBElement<String> value) {
-        this.id = ((JAXBElement<String> ) value);
+        this.id = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class InsertEmployee {
     }
 
     /**
-     * Sets the value of the name property.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
@@ -91,11 +91,11 @@ public class InsertEmployee {
      *     
      */
     public void setName(JAXBElement<String> value) {
-        this.name = ((JAXBElement<String> ) value);
+        this.name = value;
     }
 
     /**
-     * Gets the value of the address property.
+     * Obtiene el valor de la propiedad address.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class InsertEmployee {
     }
 
     /**
-     * Sets the value of the address property.
+     * Define el valor de la propiedad address.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class InsertEmployee {
      *     
      */
     public void setAddress(JAXBElement<String> value) {
-        this.address = ((JAXBElement<String> ) value);
+        this.address = value;
     }
 
 }

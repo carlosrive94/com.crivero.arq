@@ -8,7 +8,7 @@
 		<com.crivero.web.service.employee.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.employee.wsdl.version>
 		<com.crivero.web.service.product.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.product.wsdl.version>
 	</properties>
-	
+
 	<parent>
 		<groupId>com.crivero.arq</groupId>
 		<artifactId>com.crivero.arq.parent</artifactId>

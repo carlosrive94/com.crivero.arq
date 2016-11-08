@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Product complex type.
+ * <p>Clase Java para Product complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="Product">
@@ -37,15 +37,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Product {
 
-    @XmlElementRef(name = "company", type = JAXBElement.class)
+    @XmlElementRef(name = "company", type = JAXBElement.class, required = false)
     protected JAXBElement<String> company;
-    @XmlElementRef(name = "id", type = JAXBElement.class)
+    @XmlElementRef(name = "id", type = JAXBElement.class, required = false)
     protected JAXBElement<String> id;
-    @XmlElementRef(name = "name", type = JAXBElement.class)
+    @XmlElementRef(name = "name", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
 
     /**
-     * Gets the value of the company property.
+     * Obtiene el valor de la propiedad company.
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class Product {
     }
 
     /**
-     * Sets the value of the company property.
+     * Define el valor de la propiedad company.
      * 
      * @param value
      *     allowed object is
@@ -65,11 +65,11 @@ public class Product {
      *     
      */
     public void setCompany(JAXBElement<String> value) {
-        this.company = ((JAXBElement<String> ) value);
+        this.company = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      * @return
      *     possible object is
@@ -81,7 +81,7 @@ public class Product {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      * @param value
      *     allowed object is
@@ -89,11 +89,11 @@ public class Product {
      *     
      */
     public void setId(JAXBElement<String> value) {
-        this.id = ((JAXBElement<String> ) value);
+        this.id = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public class Product {
     }
 
     /**
-     * Sets the value of the name property.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class Product {
      *     
      */
     public void setName(JAXBElement<String> value) {
-        this.name = ((JAXBElement<String> ) value);
+        this.name = value;
     }
 
 }

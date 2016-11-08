@@ -24,24 +24,16 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _InsertProductResponseReturn_QNAME = new QName("", "return");
-    private final static QName _InsertProductName_QNAME = new QName("", "name");
-    private final static QName _InsertProductCompany_QNAME = new QName("", "company");
+    private final static QName _RemoveProductResponseReturn_QNAME = new QName("", "return");
     private final static QName _InsertProductId_QNAME = new QName("", "id");
+    private final static QName _InsertProductCompany_QNAME = new QName("", "company");
+    private final static QName _InsertProductName_QNAME = new QName("", "name");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.crivero.web.service.products.service
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link InsertProductResponse }
-     * 
-     */
-    public InsertProductResponse createInsertProductResponse() {
-        return new InsertProductResponse();
     }
 
     /**
@@ -53,11 +45,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link InsertProduct }
+     * Create an instance of {@link GetProducts }
      * 
      */
-    public InsertProduct createInsertProduct() {
-        return new InsertProduct();
+    public GetProducts createGetProducts() {
+        return new GetProducts();
     }
 
     /**
@@ -77,38 +69,28 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetProducts }
+     * Create an instance of {@link InsertProductResponse }
      * 
      */
-    public GetProducts createGetProducts() {
-        return new GetProducts();
+    public InsertProductResponse createInsertProductResponse() {
+        return new InsertProductResponse();
+    }
+
+    /**
+     * Create an instance of {@link InsertProduct }
+     * 
+     */
+    public InsertProduct createInsertProduct() {
+        return new InsertProduct();
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "return", scope = InsertProductResponse.class)
-    public JAXBElement<String> createInsertProductResponseReturn(String value) {
-        return new JAXBElement<String>(_InsertProductResponseReturn_QNAME, String.class, InsertProductResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "name", scope = InsertProduct.class)
-    public JAXBElement<String> createInsertProductName(String value) {
-        return new JAXBElement<String>(_InsertProductName_QNAME, String.class, InsertProduct.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "company", scope = InsertProduct.class)
-    public JAXBElement<String> createInsertProductCompany(String value) {
-        return new JAXBElement<String>(_InsertProductCompany_QNAME, String.class, InsertProduct.class, value);
+    @XmlElementDecl(namespace = "", name = "return", scope = RemoveProductResponse.class)
+    public JAXBElement<String> createRemoveProductResponseReturn(String value) {
+        return new JAXBElement<String>(_RemoveProductResponseReturn_QNAME, String.class, RemoveProductResponse.class, value);
     }
 
     /**
@@ -124,18 +106,36 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "id", scope = RemoveProduct.class)
-    public JAXBElement<String> createRemoveProductId(String value) {
-        return new JAXBElement<String>(_InsertProductId_QNAME, String.class, RemoveProduct.class, value);
+    @XmlElementDecl(namespace = "", name = "company", scope = InsertProduct.class)
+    public JAXBElement<String> createInsertProductCompany(String value) {
+        return new JAXBElement<String>(_InsertProductCompany_QNAME, String.class, InsertProduct.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "return", scope = RemoveProductResponse.class)
-    public JAXBElement<String> createRemoveProductResponseReturn(String value) {
-        return new JAXBElement<String>(_InsertProductResponseReturn_QNAME, String.class, RemoveProductResponse.class, value);
+    @XmlElementDecl(namespace = "", name = "name", scope = InsertProduct.class)
+    public JAXBElement<String> createInsertProductName(String value) {
+        return new JAXBElement<String>(_InsertProductName_QNAME, String.class, InsertProduct.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "return", scope = InsertProductResponse.class)
+    public JAXBElement<String> createInsertProductResponseReturn(String value) {
+        return new JAXBElement<String>(_RemoveProductResponseReturn_QNAME, String.class, InsertProductResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "id", scope = RemoveProduct.class)
+    public JAXBElement<String> createRemoveProductId(String value) {
+        return new JAXBElement<String>(_InsertProductId_QNAME, String.class, RemoveProduct.class, value);
     }
 
 }

@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ProductId_QNAME = new QName("", "id");
     private final static QName _ProductName_QNAME = new QName("", "name");
     private final static QName _ProductCompany_QNAME = new QName("", "company");
-    private final static QName _ProductId_QNAME = new QName("", "id");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.crivero.web.service.products.dto.xsd
@@ -47,6 +47,15 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "id", scope = Product.class)
+    public JAXBElement<String> createProductId(String value) {
+        return new JAXBElement<String>(_ProductId_QNAME, String.class, Product.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "name", scope = Product.class)
     public JAXBElement<String> createProductName(String value) {
         return new JAXBElement<String>(_ProductName_QNAME, String.class, Product.class, value);
@@ -59,15 +68,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "", name = "company", scope = Product.class)
     public JAXBElement<String> createProductCompany(String value) {
         return new JAXBElement<String>(_ProductCompany_QNAME, String.class, Product.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "id", scope = Product.class)
-    public JAXBElement<String> createProductId(String value) {
-        return new JAXBElement<String>(_ProductId_QNAME, String.class, Product.class, value);
     }
 
 }

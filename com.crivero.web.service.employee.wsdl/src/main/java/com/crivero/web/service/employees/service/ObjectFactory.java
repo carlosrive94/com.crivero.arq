@@ -37,14 +37,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetEmployees }
-     * 
-     */
-    public GetEmployees createGetEmployees() {
-        return new GetEmployees();
-    }
-
-    /**
      * Create an instance of {@link RemoveEmployee }
      * 
      */
@@ -53,19 +45,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RemoveEmployeeResponse }
+     * Create an instance of {@link GetEmployees }
      * 
      */
-    public RemoveEmployeeResponse createRemoveEmployeeResponse() {
-        return new RemoveEmployeeResponse();
-    }
-
-    /**
-     * Create an instance of {@link InsertEmployee }
-     * 
-     */
-    public InsertEmployee createInsertEmployee() {
-        return new InsertEmployee();
+    public GetEmployees createGetEmployees() {
+        return new GetEmployees();
     }
 
     /**
@@ -82,6 +66,22 @@ public class ObjectFactory {
      */
     public GetEmployeesResponse createGetEmployeesResponse() {
         return new GetEmployeesResponse();
+    }
+
+    /**
+     * Create an instance of {@link InsertEmployee }
+     * 
+     */
+    public InsertEmployee createInsertEmployee() {
+        return new InsertEmployee();
+    }
+
+    /**
+     * Create an instance of {@link RemoveEmployeeResponse }
+     * 
+     */
+    public RemoveEmployeeResponse createRemoveEmployeeResponse() {
+        return new RemoveEmployeeResponse();
     }
 
     /**
@@ -106,18 +106,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "address", scope = InsertEmployee.class)
-    public JAXBElement<String> createInsertEmployeeAddress(String value) {
-        return new JAXBElement<String>(_InsertEmployeeAddress_QNAME, String.class, InsertEmployee.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "name", scope = InsertEmployee.class)
-    public JAXBElement<String> createInsertEmployeeName(String value) {
-        return new JAXBElement<String>(_InsertEmployeeName_QNAME, String.class, InsertEmployee.class, value);
+    @XmlElementDecl(namespace = "", name = "return", scope = InsertEmployeeResponse.class)
+    public JAXBElement<String> createInsertEmployeeResponseReturn(String value) {
+        return new JAXBElement<String>(_RemoveEmployeeResponseReturn_QNAME, String.class, InsertEmployeeResponse.class, value);
     }
 
     /**
@@ -133,9 +124,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "return", scope = InsertEmployeeResponse.class)
-    public JAXBElement<String> createInsertEmployeeResponseReturn(String value) {
-        return new JAXBElement<String>(_RemoveEmployeeResponseReturn_QNAME, String.class, InsertEmployeeResponse.class, value);
+    @XmlElementDecl(namespace = "", name = "address", scope = InsertEmployee.class)
+    public JAXBElement<String> createInsertEmployeeAddress(String value) {
+        return new JAXBElement<String>(_InsertEmployeeAddress_QNAME, String.class, InsertEmployee.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "name", scope = InsertEmployee.class)
+    public JAXBElement<String> createInsertEmployeeName(String value) {
+        return new JAXBElement<String>(_InsertEmployeeName_QNAME, String.class, InsertEmployee.class, value);
     }
 
 }

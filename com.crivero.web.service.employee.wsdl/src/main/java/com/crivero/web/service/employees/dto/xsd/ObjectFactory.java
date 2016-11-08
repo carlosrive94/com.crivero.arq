@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _EmployeeId_QNAME = new QName("", "id");
     private final static QName _EmployeeAddress_QNAME = new QName("", "address");
     private final static QName _EmployeeName_QNAME = new QName("", "name");
-    private final static QName _EmployeeId_QNAME = new QName("", "id");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.crivero.web.service.employees.dto.xsd
@@ -47,6 +47,15 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "id", scope = Employee.class)
+    public JAXBElement<String> createEmployeeId(String value) {
+        return new JAXBElement<String>(_EmployeeId_QNAME, String.class, Employee.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "address", scope = Employee.class)
     public JAXBElement<String> createEmployeeAddress(String value) {
         return new JAXBElement<String>(_EmployeeAddress_QNAME, String.class, Employee.class, value);
@@ -59,15 +68,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "", name = "name", scope = Employee.class)
     public JAXBElement<String> createEmployeeName(String value) {
         return new JAXBElement<String>(_EmployeeName_QNAME, String.class, Employee.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "id", scope = Employee.class)
-    public JAXBElement<String> createEmployeeId(String value) {
-        return new JAXBElement<String>(_EmployeeId_QNAME, String.class, Employee.class, value);
     }
 
 }

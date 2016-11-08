@@ -7,7 +7,7 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 @PropertySource({ "classpath:default.properties", // default
-		"file:${userprofile}/Desktop/hello.properties" // if same key, this will 'win'
+		"classpath:hello.properties" // if same key, this will 'win'
 })
 public class AppProperties {
 

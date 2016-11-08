@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Clase Java para anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType>
@@ -35,11 +35,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "removeProductResponse")
 public class RemoveProductResponse {
 
-    @XmlElementRef(name = "return", type = JAXBElement.class)
+    @XmlElementRef(name = "return", type = JAXBElement.class, required = false)
     protected JAXBElement<String> _return;
 
     /**
-     * Gets the value of the return property.
+     * Obtiene el valor de la propiedad return.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class RemoveProductResponse {
     }
 
     /**
-     * Sets the value of the return property.
+     * Define el valor de la propiedad return.
      * 
      * @param value
      *     allowed object is
@@ -59,7 +59,7 @@ public class RemoveProductResponse {
      *     
      */
     public void setReturn(JAXBElement<String> value) {
-        this._return = ((JAXBElement<String> ) value);
+        this._return = value;
     }
 
 }

@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Employee complex type.
+ * <p>Clase Java para Employee complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="Employee">
@@ -37,15 +37,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Employee {
 
-    @XmlElementRef(name = "address", type = JAXBElement.class)
+    @XmlElementRef(name = "address", type = JAXBElement.class, required = false)
     protected JAXBElement<String> address;
-    @XmlElementRef(name = "id", type = JAXBElement.class)
+    @XmlElementRef(name = "id", type = JAXBElement.class, required = false)
     protected JAXBElement<String> id;
-    @XmlElementRef(name = "name", type = JAXBElement.class)
+    @XmlElementRef(name = "name", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
 
     /**
-     * Gets the value of the address property.
+     * Obtiene el valor de la propiedad address.
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class Employee {
     }
 
     /**
-     * Sets the value of the address property.
+     * Define el valor de la propiedad address.
      * 
      * @param value
      *     allowed object is
@@ -65,11 +65,11 @@ public class Employee {
      *     
      */
     public void setAddress(JAXBElement<String> value) {
-        this.address = ((JAXBElement<String> ) value);
+        this.address = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      * @return
      *     possible object is
@@ -81,7 +81,7 @@ public class Employee {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      * @param value
      *     allowed object is
@@ -89,11 +89,11 @@ public class Employee {
      *     
      */
     public void setId(JAXBElement<String> value) {
-        this.id = ((JAXBElement<String> ) value);
+        this.id = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public class Employee {
     }
 
     /**
-     * Sets the value of the name property.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class Employee {
      *     
      */
     public void setName(JAXBElement<String> value) {
-        this.name = ((JAXBElement<String> ) value);
+        this.name = value;
     }
 
 }
