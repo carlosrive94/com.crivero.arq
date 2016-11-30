@@ -7,6 +7,8 @@
 	<properties>
 		<com.crivero.web.service.employee.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.employee.wsdl.version>
 		<com.crivero.web.service.product.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.product.wsdl.version>
+		<com.crivero.microservice.employee.version>0.0.1-SNAPSHOT</com.crivero.microservice.employee.version>
+		<com.crivero.microservice.product.version>0.0.1-SNAPSHOT</com.crivero.microservice.product.version>
 	</properties>
 
 	<parent>
@@ -41,6 +43,16 @@
 			<groupId>com.crivero</groupId>
 			<artifactId>com.crivero.web.service.product.wsdl</artifactId>
 			<version>${com.crivero.web.service.product.wsdl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.crivero</groupId>
+			<artifactId>com.crivero.microservice.employee</artifactId>
+			<version>${com.crivero.microservice.employee.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.crivero</groupId>
+			<artifactId>com.crivero.microservice.product</artifactId>
+			<version>${com.crivero.microservice.product.version}</version>
 		</dependency>
 	</dependencies>
 

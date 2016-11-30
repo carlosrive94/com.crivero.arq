@@ -10,7 +10,7 @@ import com.crivero.arq.module.root.domain.Employee;
 import com.crivero.web.service.employees.service.EmployeeServiceWSO;
 import com.crivero.app.services.EmployeeService;
 
-@Service("employeeService")
+//@Service("employeeService")
 public class EmployeeServiceImpl implements EmployeeService {
 
 	public List<Employee> getEmployees() {

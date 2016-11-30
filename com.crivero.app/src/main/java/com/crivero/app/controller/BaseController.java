@@ -42,7 +42,7 @@ public class BaseController {
 
 	@Autowired
 	private EmployeeServiceClient employeeServiceClient;
-	
+
 	@Autowired
 	private ProductServiceClient productServiceClient;
 
@@ -110,18 +110,18 @@ public class BaseController {
 	}
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-	public String addEmployee(ModelMap model, @RequestParam(value = "id") String id, @RequestParam(value = "name") String name,
-			@RequestParam(value = "address") String address) {
+	public String addEmployee(ModelMap model, @RequestParam(value = "id") String id,
+			@RequestParam(value = "name") String name, @RequestParam(value = "address") String address) {
 		employeeServiceClient.getService().insertEmployee(id, name, address);
-		return "redirect:employees";
+		return "redirect:" + VIEW_EMPLOYEES;
 	}
 
 	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.POST)
 	public String deleteEmployee(ModelMap model, @RequestParam(value = "id") String id) {
 		employeeServiceClient.getService().removeEmployee(id);
-		return "redirect:employees";
+		return "redirect:" + VIEW_EMPLOYEES;
 	}
-	
+
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String products(ModelMap model) {
 		String msg = "";
@@ -135,16 +135,16 @@ public class BaseController {
 	}
 
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-	public String addProduct(ModelMap model, @RequestParam(value = "id") String id, @RequestParam(value = "name") String name,
-			@RequestParam(value = "company") String company) {
+	public String addProduct(ModelMap model, @RequestParam(value = "id") String id,
+			@RequestParam(value = "name") String name, @RequestParam(value = "company") String company) {
 		productServiceClient.getService().insertProduct(id, name, company);
-		return "redirect:products";
+		return "redirect:" + VIEW_PRODUCTS;
 	}
 
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
 	public String deleteProduct(ModelMap model, @RequestParam(value = "id") String id) {
 		productServiceClient.getService().removeProduct(id);
-		return "redirect:products";
+		return "redirect:" + VIEW_PRODUCTS;
 	}
 
 	@RequestMapping(value = "/primefaces", method = RequestMethod.GET)

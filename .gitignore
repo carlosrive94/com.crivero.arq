@@ -1,9 +1,0 @@
-com.crivero.app/target/
-com.crivero.arq.parent/com.crivero.arq.module.configuration/target/
-com.crivero.arq.parent/com.crivero.arq.module.literals/target/
-com.crivero.arq.parent/com.crivero.arq.module.root/target/
-com.crivero.arq.parent/com.crivero.arq.module.web.service/target/
-com.crivero.web.service/target/
-com.crivero.web.service.employee.wsdl/target/
-com.crivero.web.service.product.wsdl/target/
-com.crivero.arq.parent/com.crivero.arq.module.root/logfile.log

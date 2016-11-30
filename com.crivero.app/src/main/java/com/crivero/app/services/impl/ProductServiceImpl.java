@@ -10,7 +10,7 @@ import com.crivero.arq.module.root.domain.Product;
 import com.crivero.web.service.products.service.ProductServiceWSO;
 import com.crivero.app.services.ProductService;
 
-@Service("productService")
+//@Service("productService")
 public class ProductServiceImpl implements ProductService {
 
 	public List<Product> getProducts() {
