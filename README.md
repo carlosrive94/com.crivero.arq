@@ -4,4 +4,4 @@ This project is a prototype of a current application architecture which is plann
 
 ### DIAGRAM
 
-![application architecture](http://i.imgur.com/VIHKRCy.png)
+![application architecture](http://i.imgur.com/ZcKu2Du.png)
