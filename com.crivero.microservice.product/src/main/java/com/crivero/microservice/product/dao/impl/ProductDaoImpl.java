@@ -79,7 +79,7 @@ public class ProductDaoImpl implements ProductDao {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			products = (List<Product>) session.createQuery("from Product").getResultList();
+			products = (List<Product>) session.createQuery("from Product").list();
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)

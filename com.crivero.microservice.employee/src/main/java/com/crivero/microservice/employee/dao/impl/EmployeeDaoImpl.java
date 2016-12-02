@@ -79,7 +79,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			employees = (List<Employee>) session.createQuery("from Employee").getResultList();
+			employees = (List<Employee>) session.createQuery("from Employee").list();//getResultList();
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)

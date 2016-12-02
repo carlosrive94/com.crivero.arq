@@ -43,17 +43,7 @@
 			<groupId>com.crivero</groupId>
 			<artifactId>com.crivero.web.service.product.wsdl</artifactId>
 			<version>${com.crivero.web.service.product.wsdl.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.crivero</groupId>
-			<artifactId>com.crivero.microservice.employee</artifactId>
-			<version>${com.crivero.microservice.employee.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.crivero</groupId>
-			<artifactId>com.crivero.microservice.product</artifactId>
-			<version>${com.crivero.microservice.product.version}</version>
-		</dependency>
+		</dependency>		
 	</dependencies>
 
 	<build>
