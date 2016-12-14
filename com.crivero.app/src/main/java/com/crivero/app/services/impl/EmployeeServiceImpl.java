@@ -1,10 +1,10 @@
-package com.crivero.app.services.impl;
+/* DEPRECATED
 
+package com.crivero.app.services.impl;
+ 
 import java.util.ArrayList;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
 
 import com.crivero.arq.module.root.domain.Employee;
 import com.crivero.web.service.employees.service.EmployeeServiceWSO;
@@ -12,7 +12,7 @@ import com.crivero.app.services.EmployeeService;
 
 //@Service("employeeService")
 public class EmployeeServiceImpl implements EmployeeService {
-
+ 
 	public List<Employee> getEmployees() {
 		EmployeeServiceWSO service = new EmployeeServiceWSO();
 		List<com.crivero.web.service.employees.dto.xsd.Employee> serviceEmployees = service
@@ -38,3 +38,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 		service.getEmployeeServiceWSOHttpSoap11Endpoint().removeEmployee(id);
 	}
 }
+*/

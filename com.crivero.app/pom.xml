@@ -5,8 +5,8 @@
 	<artifactId>com.crivero.app</artifactId>
 	<packaging>war</packaging>
 	<properties>
-		<com.crivero.web.service.employee.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.employee.wsdl.version>
-		<com.crivero.web.service.product.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.product.wsdl.version>
+		<!-- <com.crivero.web.service.employee.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.employee.wsdl.version>
+		<com.crivero.web.service.product.wsdl.version>0.0.1-SNAPSHOT</com.crivero.web.service.product.wsdl.version> -->
 		<com.crivero.microservice.employee.version>0.0.1-SNAPSHOT</com.crivero.microservice.employee.version>
 		<com.crivero.microservice.product.version>0.0.1-SNAPSHOT</com.crivero.microservice.product.version>
 	</properties>
@@ -34,6 +34,7 @@
 			<groupId>com.crivero.arq</groupId>
 			<artifactId>com.crivero.arq.module.web.service</artifactId>
 		</dependency>
+		<!-- DEPRECATED
 		<dependency>
 			<groupId>com.crivero</groupId>
 			<artifactId>com.crivero.web.service.employee.wsdl</artifactId>
@@ -43,7 +44,8 @@
 			<groupId>com.crivero</groupId>
 			<artifactId>com.crivero.web.service.product.wsdl</artifactId>
 			<version>${com.crivero.web.service.product.wsdl.version}</version>
-		</dependency>		
+		</dependency>	
+		 -->	
 	</dependencies>
 
 	<build>

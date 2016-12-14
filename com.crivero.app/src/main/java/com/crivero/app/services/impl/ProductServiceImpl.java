@@ -1,10 +1,10 @@
+/* DEPRECATED
+
 package com.crivero.app.services.impl;
 
 import java.util.ArrayList;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
 
 import com.crivero.arq.module.root.domain.Product;
 import com.crivero.web.service.products.service.ProductServiceWSO;
@@ -38,3 +38,5 @@ public class ProductServiceImpl implements ProductService {
 		service.getProductServiceWSOHttpSoap12Endpoint().removeProduct(id);
 	}
 }
+
+*/
