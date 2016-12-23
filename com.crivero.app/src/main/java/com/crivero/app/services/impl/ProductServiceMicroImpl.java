@@ -26,22 +26,25 @@ import com.google.gson.reflect.TypeToken;
 public class ProductServiceMicroImpl implements ProductService {
 
 	@Autowired
-	private AppProperties appProperties;	
-	private String hostname = "http://comcriveromicroserviceproduct.cfapps.io";
+	private AppProperties appProperties;
 	final static Logger logger = LogManager.getLogger(ProductServiceMicroImpl.class.getName());
 
 	private HttpURLConnection getConnection(URL url) throws IOException {
-		if (appProperties.getProperty("com.crivero.app-local").equals("true")) {
+		if (appProperties.getProperty("proxy-necessary").equals("true")) {
 			Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.116.8.100", 8080));
 			return (HttpURLConnection) url.openConnection(proxy);
 		} else
 			return (HttpURLConnection) url.openConnection();
 	}
 
+	private String getMicroServiceURL() {
+		return appProperties.getProperty("product-microservice-url");
+	}
+
 	public List<Product> getProducts() {
 		List<Product> products = new ArrayList<>();
 		try {
-			URL url = new URL(hostname + "/products");
+			URL url = new URL(getMicroServiceURL() + "/products");
 			HttpURLConnection conn = getConnection(url);
 			conn.setRequestMethod("GET");
 			Reader reader = new InputStreamReader(conn.getInputStream());
@@ -56,7 +59,8 @@ public class ProductServiceMicroImpl implements ProductService {
 
 	public void insertProduct(String id, String name, String company) {
 		try {
-			URL url = new URL(hostname + "/product/save?id=" + id + "&name=" + name + "&company=" + company);
+			URL url = new URL(
+					getMicroServiceURL() + "/product/save?id=" + id + "&name=" + name + "&company=" + company);
 			HttpURLConnection conn = getConnection(url);
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
@@ -68,7 +72,7 @@ public class ProductServiceMicroImpl implements ProductService {
 
 	public void removeProduct(String id) {
 		try {
-			URL url = new URL(hostname + "/product/delete?id=" + id);
+			URL url = new URL(getMicroServiceURL() + "/product/delete?id=" + id);
 			HttpURLConnection conn = getConnection(url);
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");

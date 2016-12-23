@@ -27,21 +27,24 @@ public class EmployeeServiceMicroImpl implements EmployeeService {
 
 	@Autowired
 	private AppProperties appProperties;	
-	private String hostname = "http://comcriveromicroserviceemployee.cfapps.io";
 	final static Logger logger = LogManager.getLogger(EmployeeServiceMicroImpl.class.getName());
 
 	private HttpURLConnection getConnection(URL url) throws IOException {
-		if (appProperties.getProperty("com.crivero.app-local").equals("true")) {
+		if (appProperties.getProperty("proxy-necessary").equals("true")) {
 			Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.116.8.100", 8080));
 			return (HttpURLConnection) url.openConnection(proxy);
 		} else
 			return (HttpURLConnection) url.openConnection();
 	}
 
+	private String getMicroServiceURL() {
+		return appProperties.getProperty("employee-microservice-url");
+	}
+
 	public List<Employee> getEmployees() {
 		List<Employee> employees = new ArrayList<>();
 		try {
-			URL url = new URL(hostname + "/employees");
+			URL url = new URL(getMicroServiceURL() + "/employees");
 			HttpURLConnection conn = getConnection(url);
 			conn.setRequestMethod("GET");
 			Reader reader = new InputStreamReader(conn.getInputStream());
@@ -56,7 +59,7 @@ public class EmployeeServiceMicroImpl implements EmployeeService {
 
 	public void insertEmployee(String id, String name, String address) {
 		try {
-			URL url = new URL(hostname + "/employee/save?id=" + id + "&name=" + name + "&address=" + address);
+			URL url = new URL(getMicroServiceURL() + "/employee/save?id=" + id + "&name=" + name + "&address=" + address);
 			HttpURLConnection conn = getConnection(url);
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
@@ -68,7 +71,7 @@ public class EmployeeServiceMicroImpl implements EmployeeService {
 
 	public void removeEmployee(String id) {
 		try {
-			URL url = new URL(hostname + "/employee/delete?id=" + id);
+			URL url = new URL(getMicroServiceURL() + "/employee/delete?id=" + id);
 			HttpURLConnection conn = getConnection(url);
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");

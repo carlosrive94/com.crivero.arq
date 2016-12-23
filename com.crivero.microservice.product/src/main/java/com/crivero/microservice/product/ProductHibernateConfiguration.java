@@ -20,6 +20,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 public class ProductHibernateConfiguration {
 
+	private boolean local = true;
+
 	private String hostname;
 	private String port;
 	private String username;
@@ -28,7 +30,16 @@ public class ProductHibernateConfiguration {
 
 	private void updateCredentials() {
 		String vcap_services = System.getenv("VCAP_SERVICES");
-		if (vcap_services != null && vcap_services.length() > 0) {
+		if(local){
+			// local machine
+			hostname = "localhost";
+			port = "3306";
+			username = "root";
+			password = "1234";
+			name = "world";			
+		}
+		else if (vcap_services != null && vcap_services.length() > 0) {
+			// PCF ClearDB Service as Database
 			JsonObject obj = (JsonObject) new JsonParser().parse(vcap_services);
 			Entry<String, JsonElement> dbEntry = null;
 			Set<Entry<String, JsonElement>> entries = obj.entrySet();
@@ -50,11 +61,12 @@ public class ProductHibernateConfiguration {
 			password = credentials.get("password").getAsString();
 			name = credentials.get("name").getAsString();
 		} else {
-			hostname = "localhost";
+			// Docker MySQL image as Database
+			hostname = "mysql";
 			port = "3306";
 			username = "root";
-			password = "1234";
-			name = "world";
+			password = "my-secret-pw";
+			name = "my-mysql-db";
 		}
 	}
 
