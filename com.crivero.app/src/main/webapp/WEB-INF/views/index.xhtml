@@ -10,10 +10,18 @@
 	<title>Application</title>
 </h:head>
 <h:body>
-	<a href="employees">EMPLOYEES</a>
-	<a href="products">PRODUCTS</a>
-	<a href="primefaces">PRIMEFACES</a>
-	<a href="literals">LITERALS</a>
-	<a href="properties">PROPERTIES</a>
+	<h1>Arquitectura de aplicaciones sobre infraestructura PaaS</h1>
+	<h:form>
+		<p:menubar>
+			<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
+			<p:menuitem value="Products" url="products" icon="ui-icon-cart" />
+			<p:menuitem value="Literals" url="literals" icon="ui-icon-script" />
+			<p:menuitem value="Properties" url="properties"
+				icon="ui-icon-clipboard" />
+		</p:menubar>
+	</h:form>
+	<h:outputText value="My application" id="title" />
+	<p:tooltip id="toolTipGrow" for="title" value="BOOM" showEffect="clip"
+		hideEffect="explode" position="right" />
 </h:body>
 </html>
