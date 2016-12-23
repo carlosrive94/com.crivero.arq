@@ -30,15 +30,14 @@ public class ProductHibernateConfiguration {
 
 	private void updateCredentials() {
 		String vcap_services = System.getenv("VCAP_SERVICES");
-		if(local){
+		if (local) {
 			// local machine
 			hostname = "localhost";
 			port = "3306";
 			username = "root";
 			password = "1234";
-			name = "world";			
-		}
-		else if (vcap_services != null && vcap_services.length() > 0) {
+			name = "world";
+		} else if (vcap_services != null && vcap_services.length() > 0) {
 			// PCF ClearDB Service as Database
 			JsonObject obj = (JsonObject) new JsonParser().parse(vcap_services);
 			Entry<String, JsonElement> dbEntry = null;
