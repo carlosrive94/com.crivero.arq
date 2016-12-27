@@ -10,34 +10,36 @@
 	<title>Employees</title>
 </h:head>
 <h:body>
-	<a href="."><h1 style="text-align: center">Arquitectura de
-			aplicaciones sobre infraestructura PaaS</h1></a>
-	<h:form>
-		<p:menubar>
-			<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
-			<p:menuitem value="Products" url="products" icon="ui-icon-cart" />
-			<p:menuitem value="Literals" url="literals" icon="ui-icon-script" />
-			<p:menuitem value="Properties" url="properties"
-				icon="ui-icon-clipboard" />
-		</p:menubar>
-	</h:form>
-	<div style="text-align: center; margin-top: 15px">
-		<h4>${employees}</h4>
-		<p:separator />
-		
-		<h:outputText value="Insert Employee" />
-		<form method="post" action="addEmployee">
-			Id: <input type="text" name="id" /> Name: <input type="text"
-				name="name" /> Address: <input type="text" name="address" /> <input
-				type="submit" value="Add" />
-		</form>
-		<p:separator />
-		
-		<h:outputText value="Delete Employee" />
-		<form method="post" action="deleteEmployee">
-			Id: <input type="text" name="id" /> <input type="submit"
-				value="Delete" />
-		</form>
+	<div style="width: 90%; margin: 0 auto;">
+		<a href="."><h1 style="text-align: center">Arquitectura de
+				aplicaciones sobre infraestructura PaaS</h1></a>
+		<h:form>
+			<p:menubar>
+				<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
+				<p:menuitem value="Products" url="products" icon="ui-icon-cart" />
+				<p:menuitem value="Literals" url="literals" icon="ui-icon-script" />
+				<p:menuitem value="Properties" url="properties"
+					icon="ui-icon-clipboard" />
+			</p:menubar>
+		</h:form>
+		<div style="text-align: center; margin-top: 15px">
+			<h4>${employees}</h4>
+			<p:separator />
+
+			<h:outputText value="Insert Employee" />
+			<form method="post" action="addEmployee">
+				Id: <input type="text" name="id" /> Name: <input type="text"
+					name="name" /> Address: <input type="text" name="address" /> <input
+					type="submit" value="Add" />
+			</form>
+			<p:separator />
+
+			<h:outputText value="Delete Employee" />
+			<form method="post" action="deleteEmployee">
+				Id: <input type="text" name="id" /> <input type="submit"
+					value="Delete" />
+			</form>
+		</div>
 	</div>
 </h:body>
 </html>
