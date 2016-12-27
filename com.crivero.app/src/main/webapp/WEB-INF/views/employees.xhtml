@@ -3,23 +3,41 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title>Employees</title>
 </h:head>
 <h:body>
-	<h4>${employees}</h4>
-	<form method="post" action="addEmployee">
-		Id: <input type="text" name="id" /> 
-		Name: <input type="text" name="name" /> 
-		Address: <input type="text" name="address" />
-		<input type="submit" value="Add" />
-	</form>
-	<p></p>
-	<form method="post" action="deleteEmployee">
-		Id: <input type="text" name="id" /> 
-		<input type="submit" value="Delete" />
-	</form>
+	<a href="."><h1 style="text-align: center">Arquitectura de
+			aplicaciones sobre infraestructura PaaS</h1></a>
+	<h:form>
+		<p:menubar>
+			<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
+			<p:menuitem value="Products" url="products" icon="ui-icon-cart" />
+			<p:menuitem value="Literals" url="literals" icon="ui-icon-script" />
+			<p:menuitem value="Properties" url="properties"
+				icon="ui-icon-clipboard" />
+		</p:menubar>
+	</h:form>
+	<div style="text-align: center; margin-top: 15px">
+		<h4>${employees}</h4>
+		<p:separator />
+		
+		<h:outputText value="Insert Employee" />
+		<form method="post" action="addEmployee">
+			Id: <input type="text" name="id" /> Name: <input type="text"
+				name="name" /> Address: <input type="text" name="address" /> <input
+				type="submit" value="Add" />
+		</form>
+		<p:separator />
+		
+		<h:outputText value="Delete Employee" />
+		<form method="post" action="deleteEmployee">
+			Id: <input type="text" name="id" /> <input type="submit"
+				value="Delete" />
+		</form>
+	</div>
 </h:body>
 </html>

@@ -23,7 +23,6 @@ public class AppInitializer implements WebApplicationInitializer {
 		// Manage the lifecycle of the root application context
 		servletContext.addListener(new ContextLoaderListener(rootContext));
 		servletContext.setInitParameter("primefaces.THEME","casablanca");
-		System.out.println("PRIMEEEE");
 
 		// Create the dispatcher servlet's Spring application context
 		// AnnotationConfigWebApplicationContext dispatcherContext = new

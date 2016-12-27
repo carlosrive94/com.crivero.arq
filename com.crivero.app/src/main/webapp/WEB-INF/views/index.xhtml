@@ -10,7 +10,8 @@
 	<title>Application</title>
 </h:head>
 <h:body>
-	<h1>Arquitectura de aplicaciones sobre infraestructura PaaS</h1>
+	<a href="."><h1 style="text-align: center">Arquitectura de
+			aplicaciones sobre infraestructura PaaS</h1></a>
 	<h:form>
 		<p:menubar>
 			<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
@@ -20,8 +21,15 @@
 				icon="ui-icon-clipboard" />
 		</p:menubar>
 	</h:form>
-	<h:outputText value="My application" id="title" />
-	<p:tooltip id="toolTipGrow" for="title" value="BOOM" showEffect="clip"
-		hideEffect="explode" position="right" />
+	<div style="text-align: center; margin-top: 15px">
+		<p:panel style="width:300px;  margin: 0 auto;" id="pnl" header="Draggable Panel">
+			<h:outputText value="Welcome to this sample app" />
+		</p:panel>
+		<p:draggable for="pnl" />
+		<p:separator />
+		<p:clock id="clock" />
+		<p:tooltip id="toolTipGrow" for="clock" value="BOOM" showEffect="clip"
+			hideEffect="explode" position="right" />
+	</div>
 </h:body>
 </html>

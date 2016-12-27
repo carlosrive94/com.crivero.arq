@@ -3,14 +3,28 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title>Properties</title>
 </h:head>
 <h:body>
-	<h4>${property1}</h4>
-	<h4>${property2}</h4>
-	<h4>${property3}</h4>
+	<a href="."><h1 style="text-align: center">Arquitectura de
+			aplicaciones sobre infraestructura PaaS</h1></a>
+	<h:form>
+		<p:menubar>
+			<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
+			<p:menuitem value="Products" url="products" icon="ui-icon-cart" />
+			<p:menuitem value="Literals" url="literals" icon="ui-icon-script" />
+			<p:menuitem value="Properties" url="properties"
+				icon="ui-icon-clipboard" />
+		</p:menubar>
+	</h:form>
+	<div style="text-align: center; margin-top: 15px">
+		<h4>${property1}</h4>
+		<h4>${property2}</h4>
+		<h4>${property3}</h4>
+	</div>
 </h:body>
 </html>
