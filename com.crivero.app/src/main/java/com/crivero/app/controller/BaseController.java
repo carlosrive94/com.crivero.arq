@@ -1,7 +1,5 @@
 package com.crivero.app.controller;
 
-import java.util.Locale;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,6 @@ import com.crivero.app.clients.EmployeeServiceClient;
 import com.crivero.app.clients.ProductServiceClient;
 import com.crivero.arq.module.configuration.AppProperties;
 import com.crivero.arq.module.literals.LiteralsProvider;
-import com.crivero.arq.module.root.domain.Application;
 import com.crivero.arq.module.root.domain.Employee;
 import com.crivero.arq.module.root.domain.Product;
 
@@ -25,14 +22,9 @@ public class BaseController {
 	private static final String VIEW_INDEX = "index";
 	private static final String VIEW_EMPLOYEES = "employees";
 	private static final String VIEW_PRODUCTS = "products";
-	private static final String VIEW_PRIMEFACES = "primefaces";
 	private static final String VIEW_LITERALS = "literals";
 	private static final String VIEW_PROPERTIES = "properties";
-	private static final String VIEW_SIMPLEBEAN = "simplebean";
 	final static Logger logger = LogManager.getLogger(BaseController.class.getName());
-
-	@Autowired
-	private Application application;
 
 	@Autowired
 	private AppProperties appProperties;
@@ -49,14 +41,6 @@ public class BaseController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
 		return VIEW_INDEX;
-	}
-
-	@RequestMapping(value = "/simpleBean", method = RequestMethod.GET)
-	public String simpleBean(ModelMap model) {
-		String msg = "";
-		msg = "Simple bean: " + application + "\n";
-		model.addAttribute("bean1", msg);
-		return VIEW_SIMPLEBEAN;
 	}
 
 	@RequestMapping(value = "/properties", method = RequestMethod.GET)
@@ -81,20 +65,27 @@ public class BaseController {
 	@RequestMapping(value = "/literals", method = RequestMethod.GET)
 	public String literals(ModelMap model) {
 		String msg = "";
-		String literal1 = literalsProvider.getLiteral("customer.name", new Object[] { 28, "google.com" }, Locale.US);
-		msg = "Literal en: " + literal1;
-		model.addAttribute("literal1", msg);
 
-		String literal2 = literalsProvider.getLiteral("customer.name", new Object[] { 28, "forocoches.com" },
-				new Locale("ES"));
-		msg = "Literal es: " + literal2;
-		model.addAttribute("literal2", msg);
+		String title = literalsProvider.getLiteral("title", null);
+		model.addAttribute("title", title);
+		
+		String literal1 = literalsProvider.getLiteral("literal1", null);
+		model.addAttribute("literal1", literal1);
 
-		String literal3 = literalsProvider.getLiteral("customer.namer", new Object[] { 28, "google.com" },
-				new Locale("ES"));
-		msg = "Literal not found: " + literal3;
+		String literal2 = literalsProvider.getLiteral("literal2", new Object[] { 28 });
+		model.addAttribute("literal2", literal2);
+
+		String literal3 = literalsProvider.getLiteral("adfdsg", new Object[] { 28, "google.com" });
+		msg = "Error: " + literal3;
 		model.addAttribute("literal3", msg);
+		
 		return VIEW_LITERALS;
+	}
+	
+	@RequestMapping(value = "/changeLanguage", method = RequestMethod.POST)
+	public String changeLanguage(ModelMap model, @RequestParam(value = "language") String language) {
+		literalsProvider.setLanguage(language);
+		return "redirect:" + VIEW_LITERALS;
 	}
 
 	@RequestMapping(value = "/employees", method = RequestMethod.GET)
@@ -145,10 +136,5 @@ public class BaseController {
 	public String deleteProduct(ModelMap model, @RequestParam(value = "id") String id) {
 		productServiceClient.getService().removeProduct(id);
 		return "redirect:" + VIEW_PRODUCTS;
-	}
-
-	@RequestMapping(value = "/primefaces", method = RequestMethod.GET)
-	public String primefaces(ModelMap model) {
-		return VIEW_PRIMEFACES;
 	}
 }

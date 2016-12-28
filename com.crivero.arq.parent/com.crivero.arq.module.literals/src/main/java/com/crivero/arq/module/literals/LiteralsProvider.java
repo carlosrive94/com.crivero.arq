@@ -12,8 +12,18 @@ public class LiteralsProvider {
 
 	@Autowired
 	private ApplicationContext context;
+	
+	private Locale locale;
+	
+	public LiteralsProvider(){
+		locale = new Locale("es_ES");
+	}
+	
+	public void setLanguage(String language){
+		locale = new Locale(language);
+	}
 
-	public String getLiteral(String key, Object[] obj, Locale locale) {
+	public String getLiteral(String key, Object[] obj) {
 		String s;
 		try {
 			s = context.getMessage(key, obj, locale);

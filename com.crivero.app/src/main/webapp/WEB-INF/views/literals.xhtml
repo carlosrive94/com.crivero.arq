@@ -11,8 +11,7 @@
 </h:head>
 <h:body>
 	<div style="width: 90%; margin: 0 auto;">
-		<a href="."><h1 style="text-align: center">Arquitectura de
-				aplicaciones sobre infraestructura PaaS</h1></a>
+		<a href="."><h1 style="text-align: center">${title}</h1></a>
 		<h:form>
 			<p:menubar>
 				<p:menuitem value="Employees" url="employees" icon="ui-icon-person" />
@@ -27,6 +26,15 @@
 			<h4>${literal2}</h4>
 			<h4>${literal3}</h4>
 		</div>
+		<form method="post" action="changeLanguage">
+			Language:
+			<select name="language">
+				<option value="es_ES">Spanish</option>
+				<option value="en_US">English</option>
+				<option value="xh_XH">Xhosa</option>
+			</select>  
+			<input type="submit" value="Change Language" />
+		</form>
 	</div>
 </h:body>
 </html>
