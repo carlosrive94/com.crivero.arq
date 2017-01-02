@@ -20,8 +20,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 public class EmployeeHibernateConfiguration {
 
-	private boolean local = true;
-
 	private String hostname;
 	private String port;
 	private String username;
@@ -30,15 +28,7 @@ public class EmployeeHibernateConfiguration {
 
 	private void updateCredentials() {
 		String vcap_services = System.getenv("VCAP_SERVICES");
-
-		if (local) {
-			// local machine
-			hostname = "localhost";
-			port = "3306";
-			username = "root";
-			password = "1234";
-			name = "world";
-		} else if (vcap_services != null && vcap_services.length() > 0) {
+		if (vcap_services != null && vcap_services.length() > 0) {
 			// PCF ClearDB Service as Database
 			JsonObject obj = (JsonObject) new JsonParser().parse(vcap_services);
 			Entry<String, JsonElement> dbEntry = null;
@@ -61,12 +51,21 @@ public class EmployeeHibernateConfiguration {
 			password = credentials.get("password").getAsString();
 			name = credentials.get("name").getAsString();
 		} else {
-			// Docker MySQL image as Database
-			hostname = "mysql";
-			port = "3306";
-			username = "root";
-			password = "my-secret-pw";
-			name = "my-mysql-db";
+			hostname = System.getenv("DATABASE_HOSTNAME");
+			if (hostname == null)
+				hostname = "localhost";
+			port = System.getenv("DATABASE_PORT");
+			if (port == null)
+				port = "3306";
+			username = System.getenv("DATABASE_USERNAME");
+			if (username == null)
+				username = "root";
+			password = System.getenv("DATABASE_PASSWORD");
+			if (password == null)
+				password = "1234";
+			name = System.getenv("DATABASE_NAME");
+			if (name == null)
+				name = "world";
 		}
 	}
 
@@ -75,6 +74,8 @@ public class EmployeeHibernateConfiguration {
 		DriverManagerDataSource dmds = new DriverManagerDataSource();
 		updateCredentials();
 		dmds.setDriverClassName("com.mysql.jdbc.Driver");
+		System.out.println("Connecting to: jdbc:mysql://" + hostname + ":" + port + "/" + name + " // " + username + ":"
+				+ password);
 		dmds.setUrl("jdbc:mysql://" + hostname + ":" + port + "/" + name + "?useSSL=false&serverTimezone=UTC");
 		dmds.setUsername(username);
 		dmds.setPassword(password);
