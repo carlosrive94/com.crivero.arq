@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 public class EmployeeServiceMicroImpl implements EmployeeService {
 
 	@Autowired
-	private AppProperties appProperties;	
+	private AppProperties appProperties;
 	final static Logger logger = LogManager.getLogger(EmployeeServiceMicroImpl.class.getName());
 
 	private HttpURLConnection getConnection(URL url) throws IOException {
@@ -38,7 +38,10 @@ public class EmployeeServiceMicroImpl implements EmployeeService {
 	}
 
 	private String getMicroServiceURL() {
-		return appProperties.getProperty("employee-microservice-url");
+		String employeeMsURL = System.getenv("EMPLOYEE_MS_URL");
+		if (employeeMsURL == null)
+			employeeMsURL = appProperties.getProperty("employee-microservice-url");
+		return employeeMsURL;
 	}
 
 	public List<Employee> getEmployees() {
@@ -59,7 +62,8 @@ public class EmployeeServiceMicroImpl implements EmployeeService {
 
 	public void insertEmployee(String id, String name, String address) {
 		try {
-			URL url = new URL(getMicroServiceURL() + "/employee/save?id=" + id + "&name=" + name + "&address=" + address);
+			URL url = new URL(
+					getMicroServiceURL() + "/employee/save?id=" + id + "&name=" + name + "&address=" + address);
 			HttpURLConnection conn = getConnection(url);
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");

@@ -38,7 +38,10 @@ public class ProductServiceMicroImpl implements ProductService {
 	}
 
 	private String getMicroServiceURL() {
-		return appProperties.getProperty("product-microservice-url");
+		String productMsURL = System.getenv("PRODUCT_MS_URL");
+		if (productMsURL == null)
+			productMsURL = appProperties.getProperty("product-microservice-url");
+		return productMsURL;
 	}
 
 	public List<Product> getProducts() {
