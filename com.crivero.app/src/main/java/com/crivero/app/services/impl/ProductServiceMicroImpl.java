@@ -47,7 +47,7 @@ public class ProductServiceMicroImpl implements ProductService {
 	public List<Product> getProducts() {
 		List<Product> products = new ArrayList<>();
 		try {
-			URL url = new URL(getMicroServiceURL() + "/products");
+			URL url = new URL(getMicroServiceURL());
 			HttpURLConnection conn = getConnection(url);
 			conn.setRequestMethod("GET");
 			Reader reader = new InputStreamReader(conn.getInputStream());
