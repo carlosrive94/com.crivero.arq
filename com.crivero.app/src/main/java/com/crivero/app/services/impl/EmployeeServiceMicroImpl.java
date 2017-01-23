@@ -47,7 +47,7 @@ public class EmployeeServiceMicroImpl implements EmployeeService {
 	public List<Employee> getEmployees() {
 		List<Employee> employees = new ArrayList<>();
 		try {
-			URL url = new URL(getMicroServiceURL() + "/employees");
+			URL url = new URL(getMicroServiceURL());
 			HttpURLConnection conn = getConnection(url);
 			conn.setRequestMethod("GET");
 			Reader reader = new InputStreamReader(conn.getInputStream());
